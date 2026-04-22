@@ -8,7 +8,26 @@ This tool demonstrates how a Decision Tree Classifier works by:
 4. Visualizing the tree building process
 5. Providing detailed intermediate calculations
 """
+from fastmcp import FastMCP
+import base64
 
+# 1. Initialize the MCP server
+mcp = FastMCP("DecisionTreeVisualizer")
+
+# 2. Wrap your visualization logic in a tool
+@mcp.tool()
+def visualize_tree(data_summary: str) -> str:
+    """
+    Creates a decision tree visualization based on a data summary.
+    Returns a success message or path to the generated image.
+    """
+    # ... your existing logic for generating the tree goes here ...
+    return "Decision tree generated successfully!"
+
+# 3. Add this at the bottom to allow local testing (Horizon ignores this block)
+if __name__ == "__main__":
+    mcp.run()
+    
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
