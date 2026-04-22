@@ -693,7 +693,7 @@ if __name__ == "__main__":
     predictions = simulator.predict(new_data)
     print(f"Predictions: {predictions}")
     
-   if __name__ == "__main__":
+if __name__ == "__main__":
     mcp.run()
  
 
