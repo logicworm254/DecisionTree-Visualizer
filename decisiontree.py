@@ -1,3 +1,6 @@
+from fastmcp import FastMCP  
+mcp = FastMCP("DecisionTree")
+
 """
 Decision Tree Classifier Educational Tool
 
@@ -7,27 +10,7 @@ This tool demonstrates how a Decision Tree Classifier works by:
 3. Building a decision tree recursively
 4. Visualizing the tree building process
 5. Providing detailed intermediate calculations
-"""
-from fastmcp import FastMCP
-import base64
-
-# 1. Initialize the MCP server
-mcp = FastMCP("DecisionTreeVisualizer")
-
-# 2. Wrap your visualization logic in a tool
-@mcp.tool()
-def visualize_tree(data_summary: str) -> str:
-    """
-    Creates a decision tree visualization based on a data summary.
-    Returns a success message or path to the generated image.
-    """
-    # ... your existing logic for generating the tree goes here ...
-    return "Decision tree generated successfully!"
-
-# 3. Add this at the bottom to allow local testing (Horizon ignores this block)
-if __name__ == "__main__":
-    mcp.run()
-    
+"""   
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -709,3 +692,12 @@ if __name__ == "__main__":
     
     predictions = simulator.predict(new_data)
     print(f"Predictions: {predictions}")
+    
+@mcp.tool()
+def visualize_tree():
+    """AI calls this to see the tree."""
+    # (Just call your main function from your original code here)
+    return "Tree generated"
+
+if __name__ == "__main__":
+    mcp.run()
