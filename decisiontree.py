@@ -1,4 +1,4 @@
-from fastmcp import FastMCP  
+from fastmcp import FastMCP
 mcp = FastMCP("DecisionTree")
 
 """
@@ -693,11 +693,7 @@ if __name__ == "__main__":
     predictions = simulator.predict(new_data)
     print(f"Predictions: {predictions}")
     
-@mcp.tool()
-def visualize_tree():
-    """AI calls this to see the tree."""
-    # (Just call your main function from your original code here)
-    return "Tree generated"
-
-if __name__ == "__main__":
+   if __name__ == "__main__":
     mcp.run()
+ 
+
